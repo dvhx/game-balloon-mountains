@@ -7,3 +7,7 @@ How to play: In the beginning of each level a objective is displayed. Swipe left
 
 [<img src="image/demo.png">](https://dvhx.github.io/game-balloon-mountains/)
 
+### Support
+
+You can support development on [Patreon](https://www.patreon.com/DusanHalicky) or you can hire me via [Upwork](https://www.upwork.com/freelancers/~013b4c3d6e772fdb01)
+
