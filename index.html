@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Balloon mountains</title>
+
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" href="css/splash.css" type="text/css" />
+    <link rel="stylesheet" href="css/levels.css" type="text/css" />
+    <link rel="stylesheet" href="css/stars.css" type="text/css" />
+
+    <link rel="shortcut icon" href="image/icon.png" type="image/png" />
+
+    <script type="text/javascript" src="js/sound.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
+    <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/splash.js"></script>
+    <script type="text/javascript" src="js/achievements.js"></script>
+    <script type="text/javascript" src="js/stars.js"></script>
+    <script type="text/javascript" src="js/keyboard.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/random.js"></script>
+    <script type="text/javascript" src="js/sprite.js"></script>
+    <script type="text/javascript" src="js/balloons.js"></script>
+    <script type="text/javascript" src="js/progress.js"></script>
+    <script type="text/javascript" src="js/jitter.js"></script>
+    <script type="text/javascript" src="js/ridge.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/explode.js"></script>
+    <script type="text/javascript" src="js/buff.js"></script>
+    <script type="text/javascript" src="js/levels_screen.js"></script>
+    <script type="text/javascript" src="js/levels.js"></script>
+
+    <script type="text/javascript" src="js/index.js"></script>
+
+  </head>
+  <body>
+
+    <canvas id="canvas"></canvas>
+
+    <button id="pause"></button>
+    <button id="con">con</button>
+
+    <div id="progress">
+        <div id="progress_balloons"><img src="image/balloons.png" /><label id="progress_balloons_label"></label></div>
+        <div id="progress_pink"><img src="image/pink.png" /><label id="progress_pink_label"></label></div>
+        <div id="progress_blue"><img src="image/blue.png" /><label id="progress_blue_label"></label></div>
+        <div id="progress_green"><img src="image/green.png" /><label id="progress_green_label"></label></div>
+        <div id="progress_time"><img src="image/time.png" /><label id="progress_time_label"></label></div>
+        <div id="progress_mountains"><img src="image/mountains.png" /><label id="progress_mountains_label"></label></div>
+    </div>
+
+    <div id="buffs">
+        <div id="indicator_red" class="buff">
+            <label>0s</label>
+            <img src="image/red.png" />
+        </div>
+        <div id="indicator_brown" class="buff">
+            <label>0s</label>
+            <img src="image/brown.png" />
+        </div>
+        <div id="indicator_yellow" class="buff">
+            <label>0s</label>
+            <img src="image/yellow.png" />
+        </div>
+        <div id="indicator_gray" class="buff">
+            <label>0s</label>
+            <img src="image/gray.png" />
+        </div>
+    </div>
+
+  </body>
+</html>

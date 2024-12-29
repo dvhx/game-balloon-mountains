@@ -1,0 +1,104 @@
+/* css for index.js */
+
+body {
+    background-color: #bceabc;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    user-select: none;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#progress {
+    position: fixed;
+    left: 1ex;
+    top: 1ex;
+    font-size: x-large;
+    background-size: 1cm;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    border: 0 solid pink;
+    display: none;
+}
+#progress img {
+    width: 1cm;
+    height: 1cm;
+}
+#progress div {
+    display: flex;
+    align-items: center;
+}
+
+#buffs {
+    position: fixed;
+    right: 1ex;
+    top: 1ex;
+    margin-top: 1.3cm;
+}
+
+#buffs div.buff {
+    display: flex;
+    display: none;
+    align-items: center;
+}
+#buffs img {
+    width: 1cm;
+    height: 1cm;
+}
+#buffs label {
+    font-size: large;
+    color: gray;
+}
+
+#pause {
+    position: fixed;
+    right: 1ex;
+    top: 1ex;
+    width: 1cm;
+    height: 1cm;
+    background-image: url(../image/pause.png);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+    outline: 0;
+}
+#pause:active {
+    top: 1.1ex;
+}
+
+#con {
+    position: fixed;
+    left: calc(50% - 0.5cm);
+    top: 1ex;
+    width: 1cm;
+    height: 1cm;
+    display: none;
+}
+
+.gt_levels h1 {
+    font-size: x-large;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+}
+.stats div {
+    text-align: center;
+    font-size: small;
+}
+
