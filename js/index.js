@@ -1,6 +1,7 @@
 // main window
 "use strict";
-// globals: document, window, setInterval, setTimeout, requestAnimationFrame, Image
+// linter: ngspicejs-lint
+// global: document, window, setInterval, setTimeout, requestAnimationFrame, Image, console, alert
 
 var SC = window.SC || {};
 
@@ -16,28 +17,35 @@ SC.now = Date.now();
 SC.pause = true;
 SC.music_enabled = SC.storage.readBoolean('SC.music_enabled', false);
 
-function purge() {
-    SC.storage.eraseAll();
-    if (window.hasOwnProperty('chrome')) {
-        SC.console.disable();
-    }
-    document.location.reload();
-}
-
-function perf() {
+SC.perf = function () {
+    // Return performance summary
     return "dt=" + SC.dt + ' fps=' + (SC.frame / SC.time).toFixed(1) + ' jitter=' + SC.jitterness + ' frag=' + SC.fragments + '/' + SC.fragmentFrames;
-}
+};
+
+SC.quit = function () {
+    // Close this iframe by telling parent window
+    var score = SC.storage.readNumber('SC.airport.stars', 0);
+    SC.storage.writeNumber('SC.airport.stars', 0);
+    window.parent.postMessage({action: 'quit', data: {win: score > 0, score: score}});
+};
 
 SC.onPause = function () {
     // Pause/unpause game
     SC.pause = !SC.pause;
     var buttons = ['Resume', 'Menu'];
+    if (SC.airport) {
+        buttons.push('Quit');
+    }
     if (SC.pause) {
         SC.popup(
             'Game paused',
             'Take a short break and then come back!',
-            'image/player_front_100.png',
+            SC.airport ? null : 'image/player_front_100.png',
             function (aButton) {
+                if (aButton === 'Quit') {
+                    SC.quit();
+                    return;
+                }
                 SC.pause = false;
                 SC.onMenuReplayNext(aButton || 'Resume');
             },
@@ -372,10 +380,10 @@ SC.menu = function () {
 
     SC.pause = true;
     div = SC.levelsScreen(
-        'Balloon Mountains',
-        'image/player_front_100.png',
-        'image/balloons.png',
-        'image/krivan.jpg',
+        SC.airport ? 'Airport' : 'Balloon Mountains',
+        SC.airport ? 'image/airport/transparent.png' : 'image/player_front_100.png',
+        SC.airport ? 'image/airport/transparent.png' : 'image/balloons.png',
+        SC.airport ? 'image/airport/levels.jpg' : 'image/krivan.jpg',
         SC.levels,
         stars_and_achievements,
         SC.onStart,
@@ -394,6 +402,14 @@ SC.menu = function () {
         ac = document.createElement('button');
         ac.textContent = '🎵';
         ac.onclick = SC.onMusic;
+        a.appendChild(ac);
+    }
+
+    if (SC.airport) {
+        a = div.getElementsByClassName('levels_extra')[0];
+        ac = document.createElement('button');
+        ac.textContent = '❌';
+        ac.onclick = SC.quit;
         a.appendChild(ac);
     }
 };

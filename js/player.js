@@ -4,11 +4,13 @@
 
 var SC = window.SC || {};
 
+SC.airport = document.location.search.match('mode=airport') ? true : false;
+
 SC.player = (function () {
     // Player
     var self = {};
     self.image = new Image();
-    self.image.src = 'image/fly256.png';
+    self.image.src = SC.airport ? 'image/airport/fly256.png' : 'image/fly256.png';
 
     self.reset = function () {
         // Reset player values
