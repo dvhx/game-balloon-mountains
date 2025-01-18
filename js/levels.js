@@ -1,6 +1,7 @@
 // Levels
 "use strict";
-// globals: document, window, setTimeout
+// linter: ngspicejs-lint
+// global: document, window, setTimeout
 
 var SC = window.SC || {};
 

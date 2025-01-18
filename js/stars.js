@@ -26,7 +26,8 @@ SC.stars = (function () {
 
     self.add = function (aLevel, aStars) {
         // Set stars for level (only if it is higher then it was before)
-        for (var i = 0; i < aStars; i++) {
+        var i;
+        for (i = 0; i < aStars; i++) {
             SC.storage.inc('SC.airport.stars');
         }
         self.stars[aLevel] = self.stars[aLevel] || 0;

@@ -1,12 +1,12 @@
 // Main screen with button for each level and completion star rating underneath buttons
-// linter: lint-js2
-// globals:
+// linter: ngspicejs-lint
+// global: window, document, console
+    "use strict";
 
 var SC = window.SC || {};
 
 SC.levelsScreen = function (aTitle, aImageLeft, aImageRight, aBackgroundImage, aLevels, aStars, aCallback, aCallbackAchievements, aLockedCallback) {
     // Main screen with levels
-    "use strict";
 
     var div = document.createElement("div");
     var ac;
